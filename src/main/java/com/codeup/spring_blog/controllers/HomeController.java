@@ -12,6 +12,11 @@ public class HomeController {
     @ResponseBody
     public String intro(){
         return "This is a landing page.";
+           }
+
+    @GetMapping("/home")
+    public String welcome() {
+        return "home";
     }
 
 
