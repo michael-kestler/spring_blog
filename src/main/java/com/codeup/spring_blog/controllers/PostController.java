@@ -1,27 +1,41 @@
 package com.codeup.spring_blog.controllers;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 
 public class PostController {
 
 
-//    @RequestMapping(path="/posts", method = RequestMethod.GET)
-//    @ResponseBody
-//    public String index() {
-//        return posts;
-//    }
-//
-//    @RequestMapping(path="/posts/{id}", method = RequestMethod.GET)
-//    @ResponseBody
-//    public String individualPost(@PathVariable String id) {
-//        return id;
-//    }
-//
-//    @RequestMapping(path="/posts/create", method = RequestMethod.GET)
-//    @ResponseBody
-//    public String createPost(@PathVariable String ) {
-//        return createPosts;
+    @GetMapping(path = "/posts")
+    @ResponseBody
+    public String index() {
+        return "posts";
+    }
+
+    @GetMapping(path = "/posts/{id}")
+    @ResponseBody
+    public int individualPost(@PathVariable int id) {
+        return id;
+    }
+
+    @GetMapping(path = "/posts/create")
+    @ResponseBody
+    public String createPost() {
+        return "createPosts";
+
+    }
+
+    @GetMapping("/index")
+    @ResponseBody
+    public String indexPage(){
+    return "index";
+    }
+
+    @GetMapping("/show")
+    @ResponseBody
+    public String showPage(){
+        return "show";
+    }
+
 
 }
