@@ -1,5 +1,6 @@
 package com.codeup.spring_blog.controllers;
 
+import models.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -42,10 +43,9 @@ public class PostController {
 //    return "index";
 //    }
 //
-    @GetMapping("/posts")
-    @ResponseBody
+    @GetMapping("/posts/show")
     public String showPage(){
-        return "show";
+        return "posts/show";
     }
 
 
