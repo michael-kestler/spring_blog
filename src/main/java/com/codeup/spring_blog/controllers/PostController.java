@@ -56,7 +56,7 @@ public class PostController {
     @PostMapping("/posts/create")
     public String post(@RequestParam("title") String title, @RequestParam("body") String body){
         postRepository.save(new Post(title, body));
-        return "redirect:/posts";
+        return "redirect:posts/index";
 
     }
 
