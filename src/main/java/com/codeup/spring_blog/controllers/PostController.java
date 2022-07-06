@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import repositories.UserRepository;
 
 import java.util.ArrayList;
 
@@ -16,10 +17,12 @@ import java.util.ArrayList;
 public class PostController {
 
 
-    private final PostRepository postRepository;
+    private PostRepository postRepository;
+    private UserRepository userRepository;
 
-    public PostController(PostRepository postRepository) {
+    public PostController(PostRepository postRepository, UserRepository userRepository) {
         this.postRepository = postRepository;
+        this.userRepository = userRepository;
     }
 
     @GetMapping("/posts")
