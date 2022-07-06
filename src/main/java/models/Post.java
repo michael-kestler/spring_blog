@@ -1,16 +1,19 @@
 package models;
 
+import javax.persistence.Column;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "posts")
 public class Post {
 
+
+        //table creation
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         public long id;
 
-        @Column(nullable = false)
+        @Column(nullable = false, length = 100)
         public String title;
 
         @Column(nullable = false)
@@ -18,17 +21,25 @@ public class Post {
 
 
 
-
-//    private String title;
-//    private String body;
-
-    //constructors
-
+        //empty constructor
         public Post() {
 
-        }
+    }
 
-        //getters and setters
+    public Post(String title, String body) {
+            this.title = title;
+            this.body = body;
+    }
+
+    //getters and setters
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
 
     public String getTitle() {
         return title;
