@@ -1,20 +1,18 @@
 package com.codeup.spring_blog.controllers;
 
-import models.Post;
+import com.codeup.spring_blog.models.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 //import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.*;
-import repositories.PostRepository;
-import repositories.UserRepository;
-
-import java.util.ArrayList;
+import com.codeup.spring_blog.repositories.PostRepository;
+import com.codeup.spring_blog.repositories.UserRepository;
 
 @Controller
 public class PostController {
 
 
-    private PostRepository postRepository;
+    private final PostRepository postRepository;
     private UserRepository userRepository;
 
     public PostController(PostRepository postRepository, UserRepository userRepository) {
@@ -68,7 +66,7 @@ public class PostController {
     @GetMapping("posts/{id}/edit")
     public String edit(@PathVariable long id, Model model) {
         model.addAttribute("post", postRepository.getById(id));
-        return "edit";
+        return "posts/edit";
     }
 
     @PostMapping("/edit")

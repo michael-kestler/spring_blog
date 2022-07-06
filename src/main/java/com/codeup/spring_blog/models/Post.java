@@ -1,4 +1,4 @@
-package models;
+package com.codeup.spring_blog.models;
 
 import javax.persistence.Column;
 import javax.persistence.*;

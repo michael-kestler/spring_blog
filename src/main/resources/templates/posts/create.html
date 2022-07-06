@@ -18,19 +18,20 @@
             <form action="" method="POST" th:object="${post}">
 
                 <div class="form-group has-error">
-                    <label for="slug">Slug <span class="require">*</span> <small>(This field use in url path.)</small></label>
+                    <label id="slug">Slug <span class="require">*</span>
+                        <small>(This field use in url path.)</small></label>
                     <input type="text" class="form-control" name="slug" />
                     <span class="help-block">Field not entered!</span>
                 </div>
 
                 <div class="form-group">
-                    <label for="title">Title <span class="require">*</span></label>
+                    <label id="title">Title <span class="require">*</span></label>
                     <input th:field="*{title}" type="text" class="form-control" name="title" />
                 </div>
 
                 <div class="form-group">
-                    <label for="body">Body</label>
-                    <textarea th:field="*{description}" rows="5" class="form-control" name="description" ></textarea>
+                    <label id="body">Body</label>
+                    <textarea th:field="*{body}" rows="5" class="form-control" name="description" ></textarea>
                 </div>
 
                 <div class="form-group">
