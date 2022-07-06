@@ -4,11 +4,8 @@ import models.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 //import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.*;
 import repositories.PostRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import repositories.UserRepository;
 
 import java.util.ArrayList;
@@ -43,8 +40,7 @@ public class PostController {
 //    }
 
 
-
-//    @GetMapping(path = "/posts/{id}")
+    //    @GetMapping(path = "/posts/{id}")
 //    @ResponseBody
 //    public int individualPost(@PathVariable int id) {
 //        return id;
@@ -57,16 +53,30 @@ public class PostController {
     }
 
     @PostMapping("/posts/create")
-    public String post(@RequestParam("title") String title, @RequestParam("body") String body){
+    public String post(@RequestParam("title") String title, @RequestParam("body") String body) {
         postRepository.save(new Post(title, body));
         return "redirect:posts/index";
 
     }
 
     @GetMapping("/posts/show")
-    public String showPage(){
+    public String showPage() {
         return "posts/show";
     }
+
+
+    @GetMapping("posts/{id}/edit")
+    public String edit(@PathVariable long id, Model model) {
+        model.addAttribute("post", postRepository.getById(id));
+        return "edit";
+    }
+
+    @PostMapping("/edit")
+    public String edit(@ModelAttribute Post post){
+        postRepository.save(post);
+        return "redirect:/posts/index";
+    }
+
 
 
 }
