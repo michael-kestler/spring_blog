@@ -15,7 +15,7 @@
 
             <h1 style="margin-top:150px">Create post</h1>
 
-            <form action="" method="POST" th:object="${post}">
+            <form th:action="@{/posts/create}" method="POST" th:object="${post}">
 
                 <div class="form-group has-error">
                     <label id="slug">Slug <span class="require">*</span>

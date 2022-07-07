@@ -15,7 +15,7 @@
 
             <h1 style="margin-top:150px">Edit Post</h1>
 
-            <form action="@{edit}" method="POST" th:object="${post}">
+            <form th:action="@{/posts/edit}" method="POST" th:object="${post}">
 
                 <div class="form-group has-error">
                     <label id="slug">Slug <span class="require">*</span>
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input th:field="*{user}" th:value="${post.getUser()}" hidden>
+<!--                    <input th:field="*{user}" th:value="${post.getUser()}" hidden>-->
                     <input th:field="*{id}" th:value="${post.getId()}" hidden>
                     <button type="submit" class="btn btn-primary">
                         Create

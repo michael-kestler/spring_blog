@@ -8,7 +8,7 @@
 <h1>Welcome user</h1>
 <br>
 
-<form th:action="@{/posts/create}" th:method="post" th:object="${posts/create}">
+<form th:action="@{/posts/create}" th:method="post" th:object="${/create}">
     <div>
         <label>title</label>
         <input type="text" th:field="*{title}" id="title" class="field" />
