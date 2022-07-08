@@ -1,9 +1,8 @@
 package com.codeup.spring_blog;
 
-import com.codeup.spring_blog.*;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-//import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
@@ -30,17 +29,6 @@ public class PostController {
         return "posts/index";
     }
 
-//    @GetMapping(path = "/posts/index")
-////    @ResponseBody
-//    public String index(Model model) {
-//
-//        ArrayList<Post> posts = new ArrayList<>();
-//
-//        model.addAttribute("posts", posts);
-//
-//        return "posts/index";
-//    }
-
 
     @GetMapping(path = "/posts/{id}")
     public String individualPost(@PathVariable long id, Model model) {
@@ -58,21 +46,16 @@ public class PostController {
         return showPage();
     }
 
-
-
-
-
-
-
-
     @GetMapping(path = "/posts/create")
     public String create(Model model) {
         model.addAttribute("post", new Post());
+        model.addAttribute("user", new User());
         return "posts/create";
     }
 
     @PostMapping("/posts/create")
     public String post(@ModelAttribute Post post) {
+        post.setUser((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         if(post.getTitle().equals("") || post.getBody().equals("")){
             return "posts/create";
         }
@@ -90,18 +73,22 @@ public class PostController {
     }
 
 
-    @GetMapping("posts/{id}/edit")
-    public String edit(@PathVariable long id, Model model) {
-        model.addAttribute("post", postRepository.getById(id));
+
+    @GetMapping("posts/edit/{id}")
+    public String editPost(@PathVariable long id, Model model) {
+        Post editPost = postRepository.getById(id);
+        model.addAttribute("postToEdit", editPost);
         return "posts/edit";
     }
 
-    @PostMapping("/posts/edit")
-    public String edit(@ModelAttribute Post post){
-        postRepository.save(post);
+    @PostMapping("/posts/edit/{id}")
+    public String saveEditedPost(@PathVariable long id, @RequestParam(name="postTitle") String postTitle, @RequestParam(name="postBody") String postBody) {
+        Post postToEdit = postRepository.getById(id);
+        postToEdit.setBody(postBody);
+        postToEdit.setTitle(postTitle);
+        postRepository.save(postToEdit);
         return "redirect:/posts";
     }
-
 
 
 
