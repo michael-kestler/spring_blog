@@ -9,28 +9,15 @@
 <body>
 <div th:replace="partials/navbar.html :: navbar"></div>
 <br>
-<form th:action="@{/posts/{id}/edit}" th:method="post" th:object="${post}">
-    Title:
-    <input th:field="*{title}" />
-    <br />
-    Body:
-    <input th:field="*{body}" />
-    <br />
-    <input type="submit" />
-</form>
 
+<div class="container">
+    <div class="row">
 
+        <div class="col-md-8 col-md-offset-2">
 
+            <h1 style="margin-top:150px">Edit Post</h1>
 
-
-<!--<div class="container">-->
-<!--    <div class="row">-->
-
-<!--        <div class="col-md-8 col-md-offset-2">-->
-
-<!--            <h1 style="margin-top:150px">Edit Post</h1>-->
-
-<!--            <form th:action="@{/posts/edit}" method="POST" th:object="${post}">-->
+            <form th:action="@{/posts/edit/{id}(id=${post.id})}" method="POST" th:object="${post}">
 
 <!--                <div class="form-group has-error">-->
 <!--                    <label id="slug">Slug <span class="require">*</span>-->
@@ -39,38 +26,38 @@
 <!--                    <span class="help-block">Field not entered!</span>-->
 <!--                </div>-->
 
-<!--                <div class="form-group">-->
-<!--                    <label id="title">Title <span class="require">*</span></label>-->
-<!--                    <input th:field="*{title}" th:value="${post.title}" type="text" class="form-control"-->
-<!--                    name="title" />-->
-<!--                </div>-->
+                <div class="form-group">
+                    <label id="title">Title <span class="require">*</span></label>
+                    <input th:field="*{title}" type="text" class="form-control"
+                    name="title" />
+                </div>
 
-<!--                <div class="form-group">-->
-<!--                    <label id="body">Body</label>-->
-<!--                    <textarea th:field="*{body}" th:value="${post.body}"rows="5" class="form-control"-->
-<!--                    name="description"-->
-<!--                    ></textarea>-->
-<!--                </div>-->
+                <div class="form-group">
+                    <label id="body">Body</label>
+                    <textarea th:field="*{body}" rows="5" class="form-control"
+                    name="description"
+                    ></textarea>
+                </div>
 
-<!--                <div class="form-group">-->
-<!--                    <p><span class="require">*</span> - required fields</p>-->
-<!--                </div>-->
+                <div class="form-group">
+                    <p><span class="require">*</span> - required fields</p>
+                </div>
 
-<!--                <div class="form-group">-->
-<!--                    <input th:field="*{user}" th:value="${post.user}" hidden>-->
-<!--                    <input th:field="*{id}" th:value="${post.id}" hidden>-->
-<!--                    <button type="submit" class="btn btn-primary">-->
-<!--                        Create-->
-<!--                    </button>-->
-<!--                    <button class="btn btn-default">-->
-<!--                        Cancel-->
-<!--                    </button>-->
-<!--                </div>-->
+                <div class="form-group">
+                    <input th:field="*{user}" th:value="${post.user}" hidden>
+                    <input th:field="*{id}" th:value="${post.id}" hidden>
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                    <button class="btn btn-default">
+                        Cancel
+                    </button>
+                </div>
 
-<!--            </form>-->
-<!--        </div>-->
+            </form>
+        </div>
 
-<!--    </div>-->
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

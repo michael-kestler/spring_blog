@@ -57,7 +57,7 @@ public class Post implements Serializable {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle() {
         this.title = title;
     }
 
