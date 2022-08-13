@@ -7,7 +7,7 @@
 </head>
 <body>
 <nav th:replace="partials/navbar.html :: navbar"></nav>
-<h1 style="margin-top:150px">Log In</h1>
+
 <div th:if="${param.error}">
     Invalid Username and Password.
 </div>
@@ -24,6 +24,7 @@
 <!--</form>-->
 
 <div class="container">
+    <h1 style="margin-top:150px">Log In</h1>
     <div class="row">
         <div class="col-3">
 
