@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+
+    <div th:replace="partials/head :: head"></div>
+
+</head>
+    <body>
+        <div th:replace="partials/navbar.html :: navbar"></div>
+            <div class = "container">
+                <div class="col-sm-12 col-md-6 col-xl-4">
+                    <h1 style="margin-top:100px">Welcome User</h1>
+
+                </div>
+
+            </div>
+
+
+
+
+
+        <script th:replace="partials/script.html :: script"></script>
+    </body>
+</html>
