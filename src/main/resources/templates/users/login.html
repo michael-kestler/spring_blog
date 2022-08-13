@@ -8,12 +8,10 @@
 <body>
 <nav th:replace="partials/navbar.html :: navbar"></nav>
 
-<div th:if="${param.error}">
-    Invalid Username and Password.
-</div>
-<div th:if="${param.logout}">
-    You have been logged out.
-</div>
+
+
+
+
 
 <!--<form th:action="@{/login}" method="post">-->
 <!--    <label for="username">Username</label>-->
@@ -25,6 +23,14 @@
 
 <div class="container">
     <h1 style="margin-top:150px">Log In</h1>
+
+    <div th:if="${param.error}">
+        Invalid Username and Password.
+    </div>
+    <div th:if="${param.logout}">
+        You have been logged out.
+    </div>
+
     <div class="row">
         <div class="col-3">
 
