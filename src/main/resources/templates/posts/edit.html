@@ -17,7 +17,7 @@
 
             <h1 style="margin-top:150px">Edit Post</h1>
 
-            <form th:action="@{/posts/edit/{id}(id=${post.id})}" method="POST" th:object="${post}">
+            <form th:action="@{/posts/edit/{id}}" method="POST" th:object="${post}">
 
 <!--                <div class="form-group has-error">-->
 <!--                    <label id="slug">Slug <span class="require">*</span>-->
