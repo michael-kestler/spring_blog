@@ -16,7 +16,7 @@ public class Post implements Serializable {
         @Column(nullable = false, length = 100)
         public String title;
 
-        @Column(nullable = false)
+        @Column(nullable = false, length = 2000)
         public String body;
 
         @ManyToOne

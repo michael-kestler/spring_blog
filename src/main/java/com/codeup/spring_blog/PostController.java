@@ -64,7 +64,7 @@ public class PostController {
 
         postRepository.save(post);
 //        emailService.prepareAndSend(post, "post created", "Your post has been created");
-        return "redirect:posts";
+        return "redirect:/posts";
     }
 
 
