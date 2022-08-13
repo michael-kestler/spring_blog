@@ -17,7 +17,7 @@
 
             <h1 style="margin-top:150px">Edit Post</h1>
 
-            <form th:action="@{/posts/edit/{id}}" method="POST" th:object="${post}">
+            <form th:action="@{/posts/edit}" th:method="post" th:object="${post}">
 
 <!--                <div class="form-group has-error">-->
 <!--                    <label id="slug">Slug <span class="require">*</span>-->
@@ -28,13 +28,13 @@
 
                 <div class="form-group">
                     <label id="title">Title <span class="require">*</span></label>
-                    <input th:field="*{title}" type="text" class="form-control"
+                    <input th:field="*{title}" th:value="${post.getTitle()}" type="text" class="form-control"
                     name="title" />
                 </div>
 
                 <div class="form-group">
                     <label id="body">Body</label>
-                    <textarea th:field="*{body}" rows="5" class="form-control"
+                    <textarea th:field="*{body}" th:value="${post.getBody()}" rows="5" class="form-control"
                     name="description"
                     ></textarea>
                 </div>

@@ -82,7 +82,7 @@ public class PostController {
         return "posts/edit";
     }
 
-    @PostMapping("/edit/{id}")
+    @PostMapping("/posts/edit")
     public String editPost(@ModelAttribute Post post){
 
 //            (@PathVariable long id, @RequestParam(name="title") String title,
