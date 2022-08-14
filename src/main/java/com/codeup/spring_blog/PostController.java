@@ -84,6 +84,7 @@ public class PostController {
 
     @PostMapping("/posts/edit")
     public String editPost(@ModelAttribute Post post){
+        post.setUser((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
 
 //            (@PathVariable long id, @RequestParam(name="title") String title,
 //                                 @RequestParam(name="body") String body) {

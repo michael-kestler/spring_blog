@@ -12,9 +12,18 @@
         <div th:replace="partials/navbar.html :: navbar"></div>
             <div class = "container">
                 <div class="col-sm-12 col-md-6 col-xl-4">
-                    <h1 style="margin-top:100px">Welcome User</h1>
-
+                    <h1 style="margin-top:100px">Dashboard</h1>
                 </div>
+
+                <div>
+                    Welcome, <span class="text-capitalize"
+                                   th:text ="${#authentication.getPrincipal().getUsername()}"></span>
+                </div>
+
+
+
+
+
 
             </div>
 
