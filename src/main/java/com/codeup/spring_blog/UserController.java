@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserController {
     private UserRepository userRepository;
     private PasswordEncoder encoder;
+    private PostRepository postRepository;
 
-    public UserController(UserRepository userRepository, PasswordEncoder encoder) {
+    public UserController(UserRepository userRepository, PasswordEncoder encoder, PostRepository postRepository) {
         this.userRepository = userRepository;
         this.encoder = encoder;
+        this.postRepository = postRepository;
     }
 
     @GetMapping("/users/sign-up")
@@ -54,6 +56,14 @@ public class UserController {
         System.out.println(user.getPassword());
         userRepository.save(user);
         return "redirect:users/profile";
+    }
+
+    @GetMapping("/users/profile")
+    public String userProfilePage(Model model) {
+        model.addAttribute("users", userRepository.findAll());
+        model.addAttribute("posts", postRepository.findAll());
+        model.addAttribute("user", SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        return "users/profile";
     }
 
 

@@ -10,22 +10,63 @@
 </head>
     <body>
         <div th:replace="partials/navbar.html :: navbar"></div>
-            <div class = "container">
-                <div class="col-sm-12 col-md-6 col-xl-4">
-                    <h1 style="margin-top:100px">Dashboard</h1>
+
+                <div class = "container">
+                    <div class = "row">
+                        <div class ="col-lg-12">
+                            <h1 style="margin-top:100px">Dashboard</h1>
+                            <div th:each="post : ${posts}">
+                                <hr>
+                                <h3><strong><span th:text="${post.getTitle()}"></span></strong></h3>
+                                <p><span th:text="${post.getBody()}"></span></p>
+                                <h6>submitted by: <span th:text="${post.user.getUsername()}"></span></h6>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div>
-                    Welcome, <span class="text-capitalize"
-                                   th:text ="${#authentication.getPrincipal().getUsername()}"></span>
-                </div>
-
-
-
-
-
-
             </div>
+
+
+
+
+
+<!--                <div>-->
+<!--                    Welcome, <span class="text-capitalize"-->
+<!--                                   th:text ="${#authentication.getPrincipal().getUsername()}"></span>-->
+<!--                </div>-->
+
+<!--                <div>-->
+<!--                    <th:block th:each="post : ${posts}" th:if="${user} ==  $post.getUser()}">-->
+<!--                        <div>-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-3">-->
+<!--                                    <p><span th:text="${post.getTitle()}"</span></p>-->
+<!--                                    <p><span th:text="${post.getBody()}"</span></p>-->
+
+<!--                                    <a th:href="@{'/posts/edit/' + ${post.getId()}}"><button class="btn"></button></a>-->
+
+<!--                                </div>-->
+
+
+
+<!--                            </div>-->
+
+<!--                        </div>-->
+
+
+
+<!--                    </th:block>-->
+
+
+
+
+<!--                </div>-->
+
+
+
+
+<!--            </div>-->
 
 
 
