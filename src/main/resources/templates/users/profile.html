@@ -32,6 +32,8 @@
                                 <p><span th:text="${post.getBody()}"></span></p>
                                 <h6>submitted by: <span th:text="${post.user.getUsername()}"></span></h6>
                                 <hr>
+                                <a th:href="@{'/posts/edit/' + ${post.getId()}}" class="btn">Edit</a>
+                                <a th:href="@{'/posts/delete/' + ${post.getId()}}" class="btn">Delete</a>
                             </th:block>
                         </div>
                     </div>
