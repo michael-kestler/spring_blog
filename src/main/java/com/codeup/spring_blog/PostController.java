@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -100,11 +101,21 @@ public class PostController {
         return "redirect:/posts";
     }
 
-    @GetMapping("/search")
-    public String search(@Param("keyword") String keyword, Model model){
-        System.out.println("Keyword: " + keyword);
-        model.addAttribute("keyword", keyword);
-       return "posts/search_results";
+
+    @PostMapping("/search")
+    public String search(Model model, @RequestParam(name="query") String query, Post post){
+        List<Post> searchResults;
+        searchResults = postRepository.search(query);
+        model.addAttribute("searchResults", searchResults);
+        model.addAttribute("query", query);
+        model.addAttribute("posts", post);
+
+        return "posts/search_results";
+    }
+
+    @GetMapping("/posts/search_results")
+    public String showResults(@ModelAttribute(name = "searchResults") ArrayList<Post> searchResults) {
+        return "posts/search_results";
     }
 
 

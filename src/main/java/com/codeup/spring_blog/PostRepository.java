@@ -14,9 +14,8 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
         List<Post> getByUser(User user);
 
-    @Query(value = "SELECT * FROM spring_blog_db.posts WHERE "
-    + "MATCH(title, body) "
-    + "AGAINST (?1)",
-     nativeQuery = true)
-    List<Post> search(String keyword);
+    @Query("SELECT post FROM Post post WHERE post.title like %:query% or post.body like %:query%")
+    List<Post> search(String query);
+
+
 }

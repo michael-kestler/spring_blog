@@ -44,10 +44,6 @@ public class Post implements Serializable {
 
     }
 
-    public int search(String keyword){
-        Stack<Object> repo = null;
-        return repo.search(keyword);
-    }
 
     //getters and setters
     public long getId() {
