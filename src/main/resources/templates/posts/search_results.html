@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Log In</title>
+    <div th:replace="partials/head.html :: head"></div>
+</head>
+<body>
+<nav th:replace="partials/navbar.html :: navbar"></nav>
+
+    <div class="container">
+        <div>class="row"
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <h1>Search Results for [[${keyword}]]</h1>
+<!--                <div th:if="${posts}" th:each="post : ${posts}">-->
+<!--                    <hr>-->
+<!--                    <h3><strong><span th:text="${post.getTitle()}"></span></strong></h3>-->
+<!--                    <p><span th:text="${post.getBody()}"></span></p>-->
+<!--                    <h6>submitted by: <span th:text="${post.user.getUsername()}"></span></h6>-->
+<!--                    <hr>-->
+                </div>
+            </div>
+        </div>
+
+
+
+
+<script th:replace="partials/script.html :: script"></script>
+</body>
+</html>

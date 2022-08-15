@@ -3,6 +3,7 @@ package com.codeup.spring_blog;
 import javax.persistence.Column;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Stack;
 
 @Entity
 @Table(name = "posts")
@@ -41,6 +42,11 @@ public class Post implements Serializable {
             this.body = body;
             this.user = user;
 
+    }
+
+    public int search(String keyword){
+        Stack<Object> repo = null;
+        return repo.search(keyword);
     }
 
     //getters and setters

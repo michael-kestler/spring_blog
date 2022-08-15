@@ -1,5 +1,6 @@
 package com.codeup.spring_blog;
 
+import org.springframework.data.repository.query.Param;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -99,7 +100,12 @@ public class PostController {
         return "redirect:/posts";
     }
 
-
+    @GetMapping("/search")
+    public String search(@Param("keyword") String keyword, Model model){
+        System.out.println("Keyword: " + keyword);
+        model.addAttribute("keyword", keyword);
+       return "posts/search_results";
+    }
 
 
 }
