@@ -1,8 +1,11 @@
 package com.codeup.spring_blog;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.Column;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Stack;
 
 @Entity
@@ -19,6 +22,11 @@ public class Post implements Serializable {
 
         @Column(nullable = false, length = 2000)
         public String body;
+
+        @CreationTimestamp
+        @Temporal(TemporalType.TIMESTAMP)
+        @Column(name = "create_date")
+        private Date createDate;
 
         @ManyToOne
         @JoinColumn(name = "user_id")
@@ -77,6 +85,14 @@ public class Post implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
 }

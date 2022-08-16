@@ -17,6 +17,7 @@
                 <h3><strong><span th:text="${post.getTitle()}"></span></strong></h3>
                 <p><span th:text="${post.getBody()}"></span></p>
                 <h6>submitted by: <span th:text="${post.user.getUsername()}"></span></h6>
+                <span class="post-meta">Posted on: <span th:text="${#dates.format(post.createDate,'MMM dd YYYY')}"></span></span>
                 <hr>
             </div>
             </div>
