@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head th:fragment="navbar">
+<th:block th:fragment="navbar">
     <meta charset="UTF-8" />
     <title>Home</title>
 
@@ -34,15 +34,16 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
             }
             body {
                 padding-top: 75px;
+               
             }
         }
 
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- include stylesheets, etc here -->
-</head>
+</th:block>
 <body>
-<nav th:fragment="navbar">
+<th:block th:fragment="navbar">
     <div class="nav-links-ul" sec:authorize="isAuthenticated()">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="/posts">Spring Blog</a>
@@ -124,7 +125,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 
 
-</nav>
+</th:block>
 
 
 

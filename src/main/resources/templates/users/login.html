@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <title>Log In</title>
+
     <div th:replace="partials/head.html :: head"></div>
+    <link rel="stylesheet" href="/static/login.css">
 </head>
 <body>
 <nav th:replace="partials/navbar.html :: navbar"></nav>
@@ -22,18 +24,19 @@
 <!--</form>-->
 
 <div class="container">
-    <h1 style="margin-top:150px">Please sign in</h1>
+
 
     <div th:if="${param.error}">
-        Invalid Username and Password.
+        Invalid Username or Password.
     </div>
     <div th:if="${param.logout}">
         You have been logged out.
     </div>
 
-    <div class="row">
-        <div class="col-3">
+    <div class="row d-flex justify-content-center">
 
+        <div class="col-3">
+            <h3 style="margin-top:150px">Please sign in</h3>
             <form th:action="@{/login}" method="post">
                 <div class="form-group row">
                     <div class="col-sm-10">
