@@ -38,10 +38,11 @@
 
             <form class="login-form" th:action="@{/login}" method="post">
                 <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-                       <label for="username">Username</label>
-                        <input class="form-control" id="username" name="username" type="text" />
-                        <label for="password">Password</label>
-                        <input class="form-control" id="password" name="password" type="password" />
+                       <label for="username" class="sr-only">Username</label>
+                        <input class="form-control" id="username" name="username" type="text" placeholder="Username"/>
+                        <label for="password" class="sr-only">Password</label>
+                        <input class="form-control" id="password" name="password" type="password"
+                               placeholder="Password" />
                         <button type="submit" value="Log In" class="btn btn-lg btn-primary btn-block">Sign in</button>
                 <div class="small-text">Not yet registered? <a href="/users/sign-up">Register here</a></div>
             </form>
