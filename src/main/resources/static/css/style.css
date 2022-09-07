@@ -6,12 +6,40 @@ body{
     padding-top: 80px;
     padding-bottom: 80px;
     background-color: #f5f5f5;
+}
 
 
+.text-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #f5f5f5;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    height: 100%;
 }
 
 /*Login Page*/
 
-/*.login-form{*/
-/*    padding: 7% 15%;*/
-/*}*/
+.login-form{
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-control{
+    display: block;
+    width: 100%;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
