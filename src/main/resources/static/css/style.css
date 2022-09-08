@@ -8,6 +8,31 @@ nav{
 }
 
 
+/*Index Page*/
+
+/*.display-4 {*/
+/*    font-size: 2.5rem;*/
+/*}*/
+/*@media (min-width: 768px) {*/
+/*    .display-4 {*/
+/*        font-size: 3rem;*/
+/*    }*/
+/*}*/
+
+.read-more{
+    display:block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100ch;"
+}
+
+/*.index-head{*/
+/*    margin-top: 150px;*/
+/*}*/
+
+
+/*Body of Login and Sign-In*/
 .sign-in{
 
     display: -ms-flexbox;
@@ -25,17 +50,17 @@ nav{
 }
 
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 0px;
-    background-color: #f5f5f5;
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
+.index-body {
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*padding: 80px 0px ;*/
+    /*background-color: #f5f5f5;*/
+    /*margin-top: 300px;*/
+    /*font-size: 1rem;*/
+    /*font-weight: 400;*/
+    /*line-height: 1.5;*/
+    /*color: #212529;*/
    }
 
 /*Login Page*/
@@ -78,6 +103,8 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+
 
 
 
