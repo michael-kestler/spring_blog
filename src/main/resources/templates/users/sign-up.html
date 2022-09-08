@@ -5,7 +5,7 @@
     <title>Sign Up</title>
     <div th:replace="partials/head.html :: head"></div>
 </head>
-<body class="text-center">
+<body class="sign-in text-center">
 
 <nav th:replace="partials/navbar.html :: navbar"></nav>
 
@@ -13,7 +13,7 @@
 
 
 
-            <form th:action="@{/users/sign-up}" method="POST" th:object="${user}" class="signup-form">
+            <form th:action="@{/users/sign-up}" method="POST" th:object="${user}" class="login-form">
                         <h1 class="h3 mb-3 font-weight-normal">Create an account</h1>
                             <label for="username" class="sr-only">Username</label>
                             <input id="username" class="form-control" th:field="*{username}" placeholder="Username" />

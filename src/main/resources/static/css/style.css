@@ -1,4 +1,5 @@
-html{
+html,
+body {
     height: 100%;
 }
 
@@ -7,18 +8,24 @@ nav{
 }
 
 
-body{
+.sign-in{
 
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
     align-items: center;
+    -webkit-box-pack: center;
     justify-content: center;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     background-color: #f5f5f5;
 }
 
 
-.text-center {
+body {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,17 +36,9 @@ body{
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
-    height: 100%;
-}
+   }
 
 /*Login Page*/
-
-.login-form input[type="password"]{
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
 
 .login-form{
     width: 100%;
@@ -48,8 +47,9 @@ body{
     margin: 0 auto;
 }
 
-
-
+.login-form .checkbox {
+    font-weight: 400;
+}
 
 .login-form .form-control{
     position: relative;
@@ -59,16 +59,44 @@ body{
     font-size: 16px;
 }
 
-.form-control{
-    display: block;
-    width: 100%;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+
+.login-form input[type="username"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
+
+.login-form input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+.login-form input[type="password"]{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+
+
+
+
+
+
+
+/*.form-control{*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*    line-height: 1.5;*/
+/*    color: #495057;*/
+/*    background-color: #fff;*/
+/*    background-clip: padding-box;*/
+/*    border: 1px solid #ced4da;*/
+/*    border-radius: 0.25rem;*/
+/*}*/
 
 
 /*Sign-Up Page*/
