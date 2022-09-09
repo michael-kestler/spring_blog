@@ -8,7 +8,7 @@
     <div th:replace="partials/head :: head"></div>
 
 </head>
-    <body>
+    <body class="profile-body">
         <div th:replace="partials/navbar.html :: navbar"></div>
 
                 <div class = "container">
@@ -25,18 +25,36 @@
                                 </div>
                             </div>
 
-                            <th:block th:each="post : ${posts}"
+                            <section class="text-center">
+                                <h4 class="posts-h4"><strong>Your Posts</strong></h4>
+                                   <div class = "row">
+
+
+                                       <div class="col-lg-4 col-md-12 mb-4" th:each="post : ${posts}"
                                       th:if="${post.getUser().getId()} == ${#authentication.getPrincipal().getId()}">
-                                <hr>
-                                <h3><strong><span th:text="${post.getTitle()}"></span></strong></h3>
-                                <p><span th:text="${post.getBody()}"></span></p>
-                                <h6>submitted by: <span th:text="${post.user.getUsername()}"></span></h6>
+
+                                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                            <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+                                            <a href="#!">
+                                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                            </a>
+                                        </div>
+                                 <div class="card-body">
+                                <h5 class="card-title"><strong><span th:text="${post.getTitle()}"></span></strong></h5>
+                                <p class="card-text"><span th:text="${post.getBody()}"></span></p>
+                                <p>submitted by: <span th:text="${post.user.getUsername()}"></span></p>
                                 <span class="post-meta">Posted on: <span th:text="${#dates.format(post.createDate,'MMM dd YYYY')}"></span></span>
-                                <hr>
-                                <a th:href="@{'/posts/edit/' + ${post.getId()}}" class="btn">Edit</a>
-                                <a th:href="@{'/posts/delete/' + ${post.getId()}}" class="btn">Delete</a>
-                            </th:block>
+                                     <div class="col-sm-10">
+                                        <a th:href="@{'/posts/edit/' + ${post.getId()}}" class="btn btn-primary">Edit</a>
+                                        <a th:href="@{'/posts/delete/' + ${post.getId()}}" class="btn btn-primary">Delete</a>
+                                     </div>
+
+                            </div>
+                                    </div>
+                                   </div>
+                            </section>
                         </div>
+                         </div>
                     </div>
                 </div>
             </div>

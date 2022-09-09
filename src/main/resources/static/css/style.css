@@ -51,6 +51,8 @@ nav{
 
 
 .index-body {
+    margin-top: 58px;
+    /*margin-bottom: 80px;*/
     /*display: flex;*/
     /*align-items: center;*/
     /*justify-content: center;*/
@@ -62,6 +64,10 @@ nav{
     /*line-height: 1.5;*/
     /*color: #212529;*/
    }
+
+.posts-h4{
+    padding: 3% 7%;
+}
 
 /*Login Page*/
 
@@ -104,6 +110,11 @@ nav{
     border-top-right-radius: 0;
 }
 
+/*Profile Page*/
+
+.profile-body{
+    margin-top: 100px;
+}
 
 
 
@@ -111,19 +122,6 @@ nav{
 
 
 
-
-
-
-/*.form-control{*/
-/*    display: block;*/
-/*    width: 100%;*/
-/*    line-height: 1.5;*/
-/*    color: #495057;*/
-/*    background-color: #fff;*/
-/*    background-clip: padding-box;*/
-/*    border: 1px solid #ced4da;*/
-/*    border-radius: 0.25rem;*/
-/*}*/
 
 
 /*Sign-Up Page*/
