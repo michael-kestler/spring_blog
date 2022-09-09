@@ -12,10 +12,6 @@
 <div id="intro" class="p-5 text-center bg-light">
     <h1 class="mb-3 h2">Welcome to Spring Blog</h1>
     <p class="mb-3">What would you like to create?</p>
-<!--    <a class="btn btn-primary m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button" rel="nofollow"-->
-<!--       target="_blank">Start tutorial</a>-->
-<!--    <a class="btn btn-primary m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank"-->
-<!--       role="button">Download MDB UI KIT</a>-->
 </div>
 
 
@@ -40,16 +36,13 @@
                                         <div class="card-body">
                                             <h5 class="card-title"><span th:text="${post.title}"></span></h5>
                                             <p class="card-text"><span class="read-more" th:text="${post.body}"></span></p>
-                                            <div class="col-sm-10">
-                                            <a class="btn btn-primary" th:href="@{'/posts/' + ${post.getId()}}">Read
-                                               More</a>
+                                            <div>
+                                            <a class="btn btn-primary" th:href="@{'/posts/' + ${post.getId()}}">Read More</a>
+                                            </div>
                             </div>
                          </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 </div>
 <script th:replace="partials/script.html :: script">
 </script>
