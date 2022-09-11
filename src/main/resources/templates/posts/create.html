@@ -67,10 +67,15 @@
 
     </div>
 </div>
+
+
+
+<script th:replace="partials/script.html :: script"></script>
+
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
 <script>
     const button = document.querySelector('.upload')
-    const image = document.querySelector('#donorPicUrl')
-    const image2 = document.querySelector('.donorPic')
+    const image = document.querySelector('.postPic')
 
     button.addEventListener('click', () => {
         const apiKey = 'AHekHFWvmQxaoj8kxyZQ9z'
@@ -79,15 +84,13 @@
             accept: ['image/*'],
             onUploadDone: (uploadResponse) => {
                 console.log("onUploadDone", uploadResponse);
-                image.setAttribute('value', uploadResponse.filesUploaded[0].url)
-                image2.setAttribute('src', uploadResponse.filesUploaded[0].url)
+                image.setAttribute('src', uploadResponse.filesUploaded[0].url)
 
             },
         };
         client.picker(options).open();
     });
-
 </script>
-<script th:replace="partials/script.html :: script"></script>
+
 </body>
 </html>

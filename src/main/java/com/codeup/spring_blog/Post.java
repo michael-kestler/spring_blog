@@ -28,6 +28,9 @@ public class Post implements Serializable {
         @Column(name = "create_date")
         private Date createDate;
 
+        @Column(length = 200)
+        private String images;
+
         @ManyToOne
         @JoinColumn(name = "user_id")
         private User user;
