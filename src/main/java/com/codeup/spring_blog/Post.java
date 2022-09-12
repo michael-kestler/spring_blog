@@ -29,7 +29,7 @@ public class Post implements Serializable {
         private Date createDate;
 
         @Column(length = 200)
-        private String images;
+        private String image;
 
         @ManyToOne
         @JoinColumn(name = "user_id")
@@ -41,10 +41,19 @@ public class Post implements Serializable {
 
     }
 
-    public Post(long id, String title, String body, User user) {
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Post(long id, String title, String body, String image, User user) {
             this.id = id;
             this.title = title;
             this.body = body;
+            this.image = image;
             this.user = user;
     }
 
