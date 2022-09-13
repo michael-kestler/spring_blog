@@ -46,6 +46,8 @@
 <!--                <div class="form-group">-->
 <!--                    <p><span class="require">*</span> - required fields</p>-->
 <!--                </div>-->
+                <input type="hidden" id="postPicUrl" name="postPicUrl" value="" th:field="*{image}">
+
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">
@@ -75,7 +77,8 @@
 <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
 <script>
     const button = document.querySelector('.upload')
-    const image = document.querySelector('.postPic')
+    const image = document.querySelector('#postPicUrl')
+    const image2 = document.querySelector('.postPic')
 
     button.addEventListener('click', () => {
         const apiKey = 'AHekHFWvmQxaoj8kxyZQ9z'
@@ -84,7 +87,8 @@
             accept: ['image/*'],
             onUploadDone: (uploadResponse) => {
                 console.log("onUploadDone", uploadResponse);
-                image.setAttribute('src', uploadResponse.filesUploaded[0].url)
+                image.setAttribute('value', uploadResponse.filesUploaded[0].url)
+                image2.setAttribute('src', uploadResponse.filesUploaded[0].url)
 
             },
         };
