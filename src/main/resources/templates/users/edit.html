@@ -16,6 +16,15 @@
                 <form th:action="@{/users/edit}" method="post" th:object="${user}" class="col-lg-6 offset-lg-3">
                     <input th:field="*{id}" th:value="${user.getId}" hidden>
 
+
+
+
+<!--                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">-->
+<!--                        <img th:src="@{${post.getImage()}}" class="img-fluid"/>-->
+<!--                        <a href="#!">-->
+<!--                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>-->
+<!--                        </a>-->
+
                     <div class="form-group row">
                     <div class="col-sm-6 mx-auto">
                     <label for="username">Username</label>
