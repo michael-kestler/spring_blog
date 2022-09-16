@@ -3,7 +3,7 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Create Post</title>
     <div th:replace="partials/head.html :: head"></div>
 
 </head>
@@ -20,7 +20,7 @@
 
             <div class="add-img">
                 <div>
-                    <img alt="" width="200" height="200" class="postPic">
+                    <img alt="" width="750" height="250" class="postPic" style="background-color: gray">
                 </div>
                 <button class="upload">Upload Image</button>
             </div>
@@ -73,6 +73,12 @@
 
 
 <script th:replace="partials/script.html :: script"></script>
+
+
+
+<script>
+    new FroalaEditor('textarea');
+</script>
 
 <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
 <script>
