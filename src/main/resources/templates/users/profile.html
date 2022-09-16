@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>User Profile</title>
 
+    <link href="../css/froala_style.min.css" rel="stylesheet" type="text/css" />
     <div th:replace="partials/head :: head"></div>
 
 </head>
@@ -33,7 +34,9 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title"><strong><span th:text="${post.getTitle()}"></span></strong></h5>
-                    <p class="card-text"><span th:text="${post.getBody()}"></span></p>
+                    <div class="fr-view">
+                    <p class="card-text"><span th:utext="${post.getBody()}"></span></p>
+                    </div>
                     <!--                                <p>submitted by: <span th:text="${post.user.getUsername()}"></span></p>-->
                     <!--                                <span class="post-meta">Posted on: <span th:text="${#dates.format(post.createDate,'MMM dd YYYY')}"></span></span>-->
                     <div>

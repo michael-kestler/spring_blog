@@ -33,7 +33,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title"><span th:text="${post.title}"></span></h5>
-                    <p class="card-text"><span class="read-more" th:text="${post.body}"></span></p>
+                    <p class="card-text"><span class="read-more" th:utext="${post.body}"></span></p>
                     <div>
                         <a class="btn btn-primary" th:href="@{'/posts/' + ${post.getId()}}">Read More</a>
                     </div>
