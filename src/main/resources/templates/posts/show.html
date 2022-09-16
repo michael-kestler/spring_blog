@@ -22,7 +22,7 @@
                 </header>
                 <div class="card_image"><img th:src="@{${post.getImage()}}" /></div>
                 <section class="mb-5">
-                <p class="fs-5 mb-4"><span th:text="${post.getBody()}"></span></p>
+                <p class="fs-5 mb-4"><span th:utext="${post.getBody()}"></span></p>
 <!--                <h6>submitted by: <span th:text="${post.user.getUsername()}"></span></h6>-->
 <!--                <span class="post-meta">Posted on: <span th:text="${#dates.format(post.createDate,'MMM dd YYYY')}"></span></span>-->
                 </section>
