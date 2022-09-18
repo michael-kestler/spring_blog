@@ -20,7 +20,7 @@
                     by <span th:text="${post.user.getUsername()}"></span>
                     </div>
                 </header>
-                <div class="card_image"><img th:src="@{${post.getImage()}}" /></div>
+                <figure class="mb-4"><img class="img-fluid rounded" th:src="@{${post.getImage()}}" /></figure>
                 <section class="mb-5">
                 <p class="fs-5 mb-4"><span th:utext="${post.getBody()}"></span></p>
 <!--                <h6>submitted by: <span th:text="${post.user.getUsername()}"></span></h6>-->
